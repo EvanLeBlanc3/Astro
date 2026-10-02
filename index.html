@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Astro">
+<meta name="theme-color" content="#0b0618">
+<title>Astro</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+<div id="app">
+  <canvas id="sky"></canvas>
+
+  <header>
+    <div class="logo" id="logo">ASTRO</div>
+    <div class="hdr-btns">
+      <div class="mode" id="mode"><button data-m="serious">SERIOUS</button><button data-m="unhinged">UNHINGED</button></div>
+      <button class="icon-btn" id="sndBtn" aria-label="Sound"></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="view" id="v-today"></section>
+    <section class="view" id="v-big3"></section>
+    <section class="view" id="v-chart"></section>
+    <section class="view" id="v-codex"></section>
+    <section class="view" id="v-me"></section>
+  </main>
+
+  <nav id="nav">
+    <button data-v="today"><span data-i="orb"></span>TODAY</button>
+    <button data-v="big3"><span data-i="star"></span>BIG 3</button>
+    <button data-v="chart"><span data-i="wheel"></span>CHART</button>
+    <button data-v="codex"><span data-i="book"></span>CODEX</button>
+    <button data-v="me"><span data-i="user"></span>ME</button>
+  </nav>
+
+  <div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+  <canvas id="fx"></canvas>
+  <div id="crt"></div>
+  <div id="flash"></div>
+
+  <div id="boot">
+    <div class="big">ASTRO</div>
+    <canvas id="bootOrb" class="pix" width="48" height="48" style="width:144px;height:144px"></canvas>
+    <div class="tiny">A COSMIC RPG OF YOUR SUN · MOON · RISING</div>
+    <div class="press">TAP TO START</div>
+  </div>
+</div>
+
+<script src="astro.js"></script>
+<script src="data.js"></script>
+<script src="cities.js"></script>
+<script src="sprites.js"></script>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+</script>
+</body>
+</html>
